@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v1
       
        
-    - name: Git leaks Scan 1
+    - name: Git leaks Scan
       run: |
         sudo docker run --rm --name=gitleaks ${{ secrets.gitleaks }} -v -r https://github.com/FrancisBilla/GitSecure.git --pretty     
      
