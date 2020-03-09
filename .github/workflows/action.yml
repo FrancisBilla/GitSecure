@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A workflow to test the work of DataSecure
     steps:
+      
     - name: Checkout
       uses: actions/checkout@v1
+      
     - name: CodeAnalysis
       uses: bugbounty-site/GitSecure@master
       with:
@@ -18,7 +20,6 @@ jobs:
     - name: Git leaks Scan 
       uses:  zricethezav/gitleaks@master
       with:
-            command: | 
-              sudo docker pull zricethezav/gitleaks
+            command: |               
               gitleaks --repo=https://github.com/FrancisBilla/GitSecure --verbose --pretty
 
