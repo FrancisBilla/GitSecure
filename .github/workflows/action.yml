@@ -18,6 +18,7 @@ jobs:
         slack_hook: ${{ secrets.slack_webhook }}
         
     - name: Git leaks Scan
-    - run: sudo docker run --rm --name=gitleaks zricethezav/gitleaks -v -r https://github.com/FrancisBilla/GitSecure.git --pretty     
+      run: |
+        sudo docker run --rm --name=gitleaks zricethezav/gitleaks -v -r https://github.com/FrancisBilla/GitSecure.git --pretty     
      
 
