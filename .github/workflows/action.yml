@@ -14,3 +14,11 @@ jobs:
       uses: bugbounty-site/GitSecure@master
       with:
         slack_hook: ${{ secrets.slack_webhook }}
+        
+    - name: Git leaks Scan 
+      uses:  zricethezav/gitleaks@master
+      with:
+            command: | 
+              sudo docker pull zricethezav/gitleaks
+              gitleaks --repo=https://github.com/FrancisBilla/GitSecure --verbose --pretty
+
