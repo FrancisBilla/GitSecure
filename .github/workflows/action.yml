@@ -18,6 +18,6 @@ jobs:
         slack_hook: ${{ secrets.slack_webhook }}
         
     - name: Git leaks Scan
-      run:  gitleaks --repo=https://github.com/FrancisBilla/GitSecure --verbose --pretty       
+    - run:  gitleaks --repo=https://github.com/FrancisBilla/GitSecure --verbose --pretty       
      
 
